@@ -1,0 +1,16 @@
+Create a folder
+$ mkdir actions-runner && cd actions-runner
+# Download the latest runner package
+$ curl -o actions-runner-osx-x64-2.337.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.337.0/actions-runner-osx-x64-2.337.0.tar.gz
+# Optional: Validate the hash
+$ echo "d383f505d7ed041b1873ab68c35dd766fc093f2252330f95bb427be8f2c6dcfc  actions-runner-osx-x64-2.337.0.tar.gz" | shasum -a 256 -c
+# Extract the installer
+$ tar xzf ./actions-runner-osx-x64-2.337.0.tar.gz
+Configure
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/thelingolegacy-blip/TheLingoLegacy-Web --token CFCBE3FHHJR6U4GRYCMSRILK26BMC
+# Last step, run it!
+$ ./run.sh
+Using your self-hosted runner
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
